@@ -1,4 +1,4 @@
-#include "headerfile.c"
+#include "headerfile.h"
 
 int main()
 {
