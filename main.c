@@ -1,3 +1,5 @@
+#include "headerfile.c"
+
 int main()
 {
 	int n, value = 0
