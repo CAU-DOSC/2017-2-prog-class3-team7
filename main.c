@@ -1,23 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS //scanf(), gets()등의 오류를 방지하기 위한 상수 정의
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "headerfile.h"
 
 int main()
 {
-	int n, value = 0
-	cnt = 0;
+	int n, value = 0;
+	int cnt = 0;
 	LINK head = NULL;
 	LINK cur = NULL;
 
-	printf("정수값을 입력하세요. >> \n");
+	printf("Put Integers. >> \n");
 
 	while(1)
 	{
 		n = scanf("%d", &value);
 		if (n != 1)
 			break;
-		cur = createNode(value);
+		cur = createNode(value, &cnt);
 		if (cur == NULL)
 		{
-			printf("에러가 발생했습니다.");
+			printf("An Error Occured.");
 			exit(1);
 		}
 		head = append(head, cur);
@@ -25,17 +29,17 @@ int main()
 	
 	//print
 	
-	printf("1. 입력된 자료의 개수는 %d개 입니다.\n", cnt);
-	printf("2. 입력자료를 입력 역순으로 출력 >> \n");
+	printf("1. %d Integers were entered.\n", cnt);
+	printf("2. Print Inputs in reverse order >> \n");
 	reverseList(head);
-	printf("3. 입력자료의 중간 위치에 있는 자료의 값 출력 >> \n");
-	middle(cur);
-	printf("4. 입력자료를 입력 순으로 출력 >> \n\n");
-	printList(head);
-	odd_deleteList(head);
-	printf("입력자료에서 홀수번째 자료를 모두 삭제하였습니다. \n\n");
-	printf("5. 남은 자료를 순서대로 출력 >> \n");
-	printfList(head);
+	printf("3. Print the middle value >> \n");
+	middle(cur, &cnt);
+	printf("4. Print Inputs in right order >> \n\n");
+	printList(head, &cnt);
+	odd_deleteList(head, &cnt);
+	printf("Odd-th entered values were deleted. \n\n");
+	printf("5. Print the rest of values >> \n");
+	printList(head, &cnt);
 
 	return 0;
 }

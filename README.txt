@@ -12,7 +12,7 @@ Ownership
 README.txt :	임창환(DogRing)
 headerfile.h :	이정윤(JungYoonLee)
 main.c :	구경민(dudn025)
-library.c :	안재형(JaeHyung, Ahn)
+library.c :	안재형(lbr0452000)
 		박상현(galaxy821)
 
 Program summary
