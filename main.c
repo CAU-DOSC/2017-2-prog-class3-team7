@@ -24,22 +24,22 @@ int main()
 			printf("An Error Occured.");
 			exit(1);
 		}
-		head = append(head, cur);
+		head = append(cur, head);
 	}
 	
 	//print
 	
 	printf("1. %d Integers were entered.\n", cnt);
 	printf("2. Print Inputs in reverse order >> \n");
-	reverseList(head);
-	printf("3. Print the middle value >> \n");
-	middle(cur, &cnt);
-	printf("4. Print Inputs in right order >> \n\n");
-	printList(head, &cnt);
+	reverseList(head, &cnt);
+	printf("\n\n3. Print the middle value >> \n");
+	middle(head, &cnt);
+	printf("\n4. Print Inputs in right order >> \n\n");
+	printList(head);
 	odd_deleteList(head, &cnt);
-	printf("Odd-th entered values were deleted. \n\n");
+	printf("\n\nOdd-th entered values were deleted. \n\n");
 	printf("5. Print the rest of values >> \n");
-	printList(head, &cnt);
+	printList(head);
 
 	return 0;
 }

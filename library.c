@@ -1,3 +1,4 @@
+#include "headerfile.h"
 
 LINK createNode(int *value, int *cnt)
 {
@@ -11,7 +12,7 @@ LINK createNode(int *value, int *cnt)
 	//   cur->value = (int*)malloc(sizeof(int) * 2);
 	cur->value = value;
 	cur->next = NULL;
-	*cnt++;
+	(*cnt)++;
 	return cur;
 }
 
@@ -33,17 +34,17 @@ LINK append(LINK cur, LINK head)
 	return head;
 }
 
-void reverseList(LINK head)
+void printList(LINK head)
 {
 	LINK nextNODE = head;
 	while (nextNODE != NULL)
 	{
-		printf("%d\n", nextNODE->value);
+		printf("%4d  ", nextNODE->value);
 		nextNODE = nextNODE->next;
 	}
 }
 
-void printList(LINK head, int *cnt)
+void reverseList(LINK head, int *cnt)
 {
 	LINK nextNODE = head;
 	for (int i = 0; i < *cnt; i++)
@@ -51,7 +52,7 @@ void printList(LINK head, int *cnt)
 		for (int j = 0; j < *cnt - i - 1; j++)
 			nextNODE = nextNODE->next;
 		if (nextNODE->value != 0)
-			printf("%d\n", nextNODE->value);
+			printf("%4d  ", nextNODE->value);
 		nextNODE = head;
 	}
 }

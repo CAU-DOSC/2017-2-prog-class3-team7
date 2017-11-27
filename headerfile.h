@@ -13,6 +13,13 @@ struct node	//Linked List를 구현할 수 있는 구조체
 };
 
 typedef struct node NODE;
-typedef NODE *LINK;
+typedef NODE* LINK;
 
 int cnt;
+
+LINK createNode(int*, int*);
+LINK append(LINK, LINK);
+void reverseList(LINK, int*);
+void printList(LINK);
+void middle(LINK, int*);
+void odd_deleteList(LINK, int*);
