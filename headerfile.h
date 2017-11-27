@@ -17,9 +17,11 @@ typedef NODE* LINK;
 
 int cnt;
 
-LINK createNode(int*, int*);
+LINK createNode(int, int*);
 LINK append(LINK, LINK);
 void reverseList(LINK, int*);
 void printList(LINK);
 void middle(LINK, int*);
-void odd_deleteList(LINK, int*);
+LINK odd_deleteList(LINK, int);
+LINK noderemover_str(LINK);
+LINK noderemover(LINK, int);

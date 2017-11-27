@@ -1,6 +1,6 @@
 #include "headerfile.h"
 
-LINK createNode(int *value, int *cnt)
+LINK createNode(int value, int *cnt)
 {
 	LINK cur;
 	cur = (LINK)malloc(sizeof(NODE));
@@ -24,7 +24,6 @@ LINK append(LINK cur, LINK head)
 		head = cur;
 		return head;
 	}
-
 	while (nextNode->next != NULL)
 	{
 		nextNode = nextNode->next;
@@ -57,6 +56,7 @@ void reverseList(LINK head, int *cnt)
 	}
 }
 
+/*
 void odd_deleteList(LINK head, int *cnt)
 {
 	LINK nextNODE = head;
@@ -89,6 +89,51 @@ void odd_deleteList(LINK head, int *cnt)
 	head = nextNODE;
 	return head;
 }
+*/
+
+LINK odd_deleteList(LINK head, int cnt)
+{
+	if ((cnt % 2) == 0)
+	{
+		head = noderemover_str(head);
+		for (int n = 1; n <= ((cnt / 2) - 1); n++)
+		{
+			head = noderemover(head, n);
+		}
+	}
+	else
+	{
+		head = noderemover_str(head);
+		for (int n = 1; n <= (cnt / 2); n++)
+		{
+			head = noderemover(head, n);
+		}
+	}
+	return head;
+}
+
+LINK noderemover_str(LINK head)
+{
+	LINK removenode_str = head->next;
+	head = removenode_str;
+	return head;
+}
+
+LINK noderemover(LINK head, int count)
+{
+	int i = 1;
+	LINK tempnode = head;
+	LINK removenode = tempnode->next;
+	while (i <= count - 1)
+	{
+		removenode = removenode->next;
+		tempnode = tempnode->next;
+		i++;
+	}
+	tempnode->next = removenode->next;
+	free(removenode);
+	return head;
+}
 
 void middle(LINK head, int *cnt)
 {
@@ -99,7 +144,7 @@ void middle(LINK head, int *cnt)
 		{
 			nextNODE = nextNODE->next;
 		}
-		printf("%d\n", nextNODE->value);
+		printf("%4d  ", nextNODE->value);
 	}
 	if (*cnt % 2 == 0)
 	{
@@ -107,13 +152,13 @@ void middle(LINK head, int *cnt)
 		{
 			nextNODE = nextNODE->next;
 		}
-		printf("%d\n", nextNODE->value);
+		printf("%4d  ", nextNODE->value);
 		nextNODE = head;
 		for (int i = 0; i<(int)(*cnt / 2 + 0.5) - 1; i++)
 		{
 			nextNODE = nextNODE->next;
 		}
-		printf("%d\n", nextNODE->value);
+		printf("%4d  ", nextNODE->value);
 	}
-
+	puts("");
 }

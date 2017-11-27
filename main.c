@@ -30,15 +30,15 @@ int main()
 	//print
 	
 	printf("1. %d Integers were entered.\n", cnt);
-	printf("2. Print Inputs in reverse order >> \n");
+	printf("2. Print Inputs in reverse order >> \n\n");
 	reverseList(head, &cnt);
-	printf("\n\n3. Print the middle value >> \n");
+	printf("\n\n3. Print the middle value >> \n\n");
 	middle(head, &cnt);
 	printf("\n4. Print Inputs in right order >> \n\n");
 	printList(head);
-	odd_deleteList(head, &cnt);
+	head=odd_deleteList(head, cnt);
 	printf("\n\nOdd-th entered values were deleted. \n\n");
-	printf("5. Print the rest of values >> \n");
+	printf("5. Print the rest of values >> \n\n");
 	printList(head);
 
 	return 0;
