@@ -6,18 +6,15 @@
 
 int main()
 {
-	int n, value = 0;
+	int value = 0;
 	int cnt = 0;
 	LINK head = NULL;
 	LINK cur = NULL;
 
 	printf("Put Integers. >> \n");
 
-	while(1)
+	while(scanf("%d", &value) != EOF)
 	{
-		n = scanf("%d", &value);
-		if (n != 1)
-			break;
 		cur = createNode(value, &cnt);
 		if (cur == NULL)
 		{
@@ -27,7 +24,7 @@ int main()
 		head = append(cur, head);
 	}
 	
-	printf("1. %d Integers were entered.\n", cnt);
+	printf("%d Integers were entered.\n", cnt);
 	printf("2. Print Inputs in reverse order >> \n\n");
 	reverseList(head, &cnt);
 	printf("\n\n3. Print the middle value >> \n\n");
