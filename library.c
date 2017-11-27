@@ -9,7 +9,6 @@ LINK createNode(int value, int *cnt)
 		printf("오류가 발생하였습니다.");
 		return NULL;
 	}
-	//   cur->value = (int*)malloc(sizeof(int) * 2);
 	cur->value = value;
 	cur->next = NULL;
 	(*cnt)++;
@@ -55,41 +54,6 @@ void reverseList(LINK head, int *cnt)
 		nextNODE = head;
 	}
 }
-
-/*
-void odd_deleteList(LINK head, int *cnt)
-{
-	LINK nextNODE = head;
-	while (nextNODE != NULL)
-	{
-		if (*cnt % 2 == 1)
-		{
-			for (int i = 0; i < *cnt; i++)
-			{
-				if (i % 2 == 0)
-				{
-					nextNODE->value = 0;
-				}
-				nextNODE = nextNODE->next;
-			}
-		}
-		if (*cnt % 2 == 0)
-		{
-			for (int i = 0; i < *cnt; i++)
-			{
-				if (i % 2 == 1)
-				{
-					nextNODE->value = 0;
-				}
-				nextNODE = nextNODE->next;
-			}
-		}
-
-	}
-	head = nextNODE;
-	return head;
-}
-*/
 
 LINK odd_deleteList(LINK head, int cnt)
 {

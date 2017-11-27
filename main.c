@@ -27,8 +27,6 @@ int main()
 		head = append(cur, head);
 	}
 	
-	//print
-	
 	printf("1. %d Integers were entered.\n", cnt);
 	printf("2. Print Inputs in reverse order >> \n\n");
 	reverseList(head, &cnt);
@@ -40,6 +38,7 @@ int main()
 	printf("\n\nOdd-th entered values were deleted. \n\n");
 	printf("5. Print the rest of values >> \n\n");
 	printList(head);
+	printf("\n\n");
 
 	return 0;
 }
