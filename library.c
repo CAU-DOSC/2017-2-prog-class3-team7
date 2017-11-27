@@ -6,7 +6,7 @@ LINK createNode(int value, int *cnt)
 	cur = (LINK)malloc(sizeof(NODE));
 	if (cur == NULL)
 	{
-		printf("오류가 발생하였습니다.");
+		printf("Error Occurred!");
 		return NULL;
 	}
 	cur->value = value;
