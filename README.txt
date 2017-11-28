@@ -33,10 +33,10 @@ ctrl-z가 입력될 때까지 입력받은 정수값을 linked list를 구성하
 
 Library function List
 
-createNode(int, int*)
+LINK createNode(int, int*)
 	// 새 NODE 생성 후 주소값반환
 
-append(LINK, LINK)
+LINK sappend(LINK, LINK)
 	// 새 NODE의 주소값을 받아 연결
 
 void printList(LINK)
