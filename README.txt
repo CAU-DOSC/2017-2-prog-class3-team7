@@ -1,4 +1,4 @@
-# README file for TEAM[3,7]:
+﻿# README file for TEAM[3,7]:
 
 This text file describes brief but precise and complete specification of project including:
 - funtion descriptions: name, input/output parameters
@@ -22,6 +22,13 @@ Program summary
 
 Head 라는 struct node를 가리키는 pointer를 사용하여
 ctrl-z가 입력될 때까지 입력받은 정수값을 linked list를 구성하며 node에 저장
+1. 입력된 자료의 갯수 출력
+2. 입력 역순 출력
+3. 중간 위치 값 출력
+4. 입력 순서 출력
+5. 홀수번째 자료 삭제
+6. 입력 순서 출력
+
 
 
 Library function List
