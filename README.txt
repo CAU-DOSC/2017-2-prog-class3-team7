@@ -24,10 +24,22 @@ Head 라는 struct node를 가리키는 pointer를 사용하여
 ctrl-z가 입력될 때까지 입력받은 정수값을 linked list를 구성하며 node에 저장
 
 
-Print List
+Library function List
 
-1. 입력된 자료의 개수 출력
-2. 입력자료를 입력 역순으로 출력
-3. 입력자료의 중간 위치 값 출력 (입력 자료 개수가 짝수일 때, 중간의 두 값을 출력)
-4. 입력자료를 입력 순으로 출력
-5. 입력 자료에서 홀수번째 자료를 모두 삭제후 순서대로 출력
+createNode(int, int*)
+	// 새 NODE 생성 후 주소값반환
+
+append(LINK, LINK)
+	// 새 NODE의 주소값을 받아 연결
+
+void printList(LINK)
+	// Linked List를 순서대로 출력
+
+void reverseList(LINK, int*)
+	// Linked List를 역순으로 출력
+
+void middle(LINK, int*)
+	// Linked List의 가운데 값을 출력
+
+LINK odd_deleteList(LINK, int)
+	// Linked List의 홀수번째 node를 삭제
