@@ -2,9 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-void BlockSwap(char *str, int n, int d, int data)
+void BlockSwap(char *str, int n, int d)
 {
-	char *TempStr = (char*)malloc((sizeof(char)*data) + 1);
+	int data = (d < 0) ? -d : d;
+	char *TempStr = (char*)malloc(sizeof(char)*data);
 	
 	if (d > 0)//Clockwise Rotation
 	{
@@ -20,10 +21,10 @@ void BlockSwap(char *str, int n, int d, int data)
 	else if (d < 0)//CounterClockwise Rotation
 	{
 		for (int i = 0;i < data;i++)//str의 뒷부분 data만큼을 TempStr에 저장
-			TempStr[n - data + i] = str[i];
+			TempStr[i] = str[n - data + i];
 
 		for (int i = 0;i < n - data;i++)//str의 뒷부분 data만큼을 제외한 앞부분을 뒷쪽으로 당겨옴
-			str[n - i] = str[n - data - i];
+			str[n - i - 1] = str[n - i - 2];
 
 		for (int i = 0;i < data;i++)//str의 뒷부분 data만큼을 TempStr의 내용으로 채움
 			str[i] = TempStr[i];
