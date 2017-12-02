@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 
 void juggle(char *str1, int d, int length)
 {
@@ -22,10 +24,10 @@ void juggle(char *str1, int d, int length)
 	{
 		for (int i = 0; i < length; i++)
 		{
-			if (i < (length - d))
-				juggle[i + d] = str1[i];
+			if (i < (length - (-d)))
+				juggle[i + (-d)] = str1[i];
 			else
-				juggle[i - (length - d)] = str1[i];
+				juggle[i - (length - (-d))] = str1[i];
 		}
 		for (int i = 0; i < length; i++)
 		{

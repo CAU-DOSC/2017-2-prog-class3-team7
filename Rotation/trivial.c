@@ -17,7 +17,7 @@ void trivial(char *str1, int d, int length)
 	}
 	else if (d < 0)
 	{
-		for (int i = 0; i < d; i++)
+		for (int i = 0; i < (-d); i++)
 		{
 			temp = str1[length - 1];
 			for (int j = 0; j < length - 1; j++)
