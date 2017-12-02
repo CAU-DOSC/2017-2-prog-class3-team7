@@ -1,0 +1,52 @@
+﻿# README file for TEAM[3,7]:
+
+This text file describes brief but precise and complete specification of project including:
+- funtion descriptions: name, input/output parameters
+- declaration of of important data and data types to be included in user header file
+- your team's brief ideas of implementations
+
+- - -
+Your description start form next line and do not delete lines upto this point.
+
+
+Ownership
+
+README.txt :	임창환(DogRing)
+headerfile.h :	이정윤(JungYoonLee)
+main.c :	구경민(dudn025)
+library.c :	안재형(lbr0452000)
+		박상현(galaxy821)
+
+
+Program summary
+
+Head 라는 struct node를 가리키는 pointer를 사용하여
+ctrl-z가 입력될 때까지 입력받은 정수값을 linked list를 구성하며 node에 저장
+1. 입력된 자료의 갯수 출력
+2. 입력 역순 출력
+3. 중간 위치 값 출력
+4. 입력 순서 출력
+5. 홀수번째 자료 삭제
+6. 입력 순서 출력
+
+
+
+Library function List
+
+LINK createNode(int, int*)
+	// 새 NODE 생성 후 주소값반환
+
+LINK sappend(LINK, LINK)
+	// 새 NODE의 주소값을 받아 연결
+
+void printList(LINK)
+	// Linked List를 순서대로 출력
+
+void reverseList(LINK, int*)
+	// Linked List를 역순으로 출력
+
+void middle(LINK, int*)
+	// Linked List의 가운데 값을 출력
+
+LINK odd_deleteList(LINK, int)
+	// Linked List의 홀수번째 node를 삭제
