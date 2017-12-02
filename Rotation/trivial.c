@@ -1,37 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void trivial(char *str1, int rotate, int d, int length)
+void trivial(char *str1, int d, int length)
 {
-	char* trivial_str = (char *)malloc(length + 1);
-
+	char temp;
 	if (d > 0)
 	{
-		for (int i = 0; i < length; i++)
+		for (int i = 0; i < d; i++)
 		{
-			if (i > rotate - 1)
-				trivial_str[i - rotate] = str1[i];
-			else
-				trivial_str[i + (length - rotate)] = str1[i];
-		}
-		for (int i = 0; i < length; i++)
-		{
-			str1[i] = trivial_str;
+			temp = str1[0];
+			for (int j = 1; j < length; j++)
+				str1[j - 1] = str1[j];
+			str1[length - 1] = temp;
 		}
 		return;
 	}
 	else if (d < 0)
 	{
-		for (int i = 0; i < length; i++)
+		for (int i = 0; i < d; i++)
 		{
-			if (i < (length - rotate))
-				trivial_str[i + rotate] = str1[i];
-			else
-				trivial_str[i - (length - rotate)] = str1[i];
-		}
-		for (int i = 0; i < length; i++)
-		{
-			str1[i] = trivial_str;
+			temp = str1[length - 1];
+			for (int j = 0; j < length - 1; j++)
+				str1[j + 1] = str1[j];
+			str1[0] = temp;
 		}
 		return;
 	}
