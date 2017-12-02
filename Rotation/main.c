@@ -6,7 +6,6 @@
 int main()
 {
 	int length;
-	int rotate;
 	int d;
 
 	double trivial_time;
@@ -15,9 +14,7 @@ int main()
 
 	printf("input str1 length>");
 	scanf("%d", &length);
-	printf("input rotate distance>");
-	scanf("%d", &rotate);
-	printf("select number\n");
+	printf("input rotate distance\n");
 	printf("input positive number : clockwise rotation\n");
 	printf("input negative number : countclockwise rotation\n>");
 	scanf("%d", &d);
@@ -27,12 +24,12 @@ int main()
 		str1[i] = i;
 	}
 	start = clock();
-	trivial(str1, rotate, d, length);
+	trivial(str1, d, length);
 	end = clock();
 	trivial_time = end - start;
 
 	start = clock();
-	BlockSwap(str1, rotate, d, length);
+	BlockSwap(str1, d, length);
 	end = clock();
 	BlockSwap_time = end - start;
 
