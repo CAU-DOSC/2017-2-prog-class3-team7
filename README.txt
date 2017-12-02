@@ -31,3 +31,7 @@ Print List
 3. 입력자료의 중간 위치 값 출력 (입력 자료 개수가 짝수일 때, 중간의 두 값을 출력)
 4. 입력자료를 입력 순으로 출력
 5. 입력 자료에서 홀수번째 자료를 모두 삭제후 순서대로 출력
+
+Functional Description
+Link createNode(int value, int*cnt)
+int형 변수와 node* 변수를 가지는 구조체  
