@@ -21,12 +21,12 @@ int main()
 
 	for (int i = 0; i < n; i++)		//str을 랜덤하게 채움 (범위 : 'a' ~ 'z')
 		str[i] = (rand() % 25) + 'a';
-	str[n] = NULL;					//str의 마지막은 NULL로 채움
+	str[n] = '\0';					//str의 마지막은 NULL로 채움
 
 	printf("\noriginal string : %s\n\n", str);//str 내용 출력
 	char *str_temp = (char*)malloc((sizeof(char) * n) + 1);		//str과 길이가 같은 str_temp 생성
 
-	/*
+	
 	//Trivial로 실행
 	strcpy(str_temp, str);
 	start = clock();
@@ -36,7 +36,7 @@ int main()
 	printf("Trivial\n");
 	printf("\tResult : %s\n", str_temp);
 	printf("\tElapsed Time : %d\n", elapsed_time);
-	*/
+
 
 	//BlockSwap로 실행
 	strcpy(str_temp, str);
