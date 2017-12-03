@@ -43,11 +43,13 @@ Program summary
 
 Library function List
 
-T.trivial
-T.juggle
-T.bw
-T.reverse
+T.trivial(char *str1, int length, int d)
 
+T.juggle(char *str1, int d, int length)
+
+T.bw(char *str, int d, int length)
+
+T.reverse(char *str, int n, int d)
 
 
 Test Results
