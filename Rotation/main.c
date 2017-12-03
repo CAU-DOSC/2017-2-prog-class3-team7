@@ -12,23 +12,28 @@ int main()
 	double elapsed_time;
 	clock_t start, end;
 
-	printf("input the length of string> ");		//string의 길이 n 입력
+	printf("input the length of string> ");
 	scanf("%d", &n);
+	//Input the length of string
 
-	printf("input the number of string to rotate> ");		//rotate시킬 string의 길이 d 입력 (음수 입력시 반대방향으로 rotate하도록 짤 것)
+	printf("input the number of string to rotate> ");
 	scanf("%d", &d);
+	//Input the number of string to ratate (If negative input, rotate to the opposite direction)
 
 	char *str = (char*)malloc((sizeof(char) * n) + 1);		//str 생성
 
 	for (int i = 0; i < n; i++)		//str을 랜덤하게 채움 (범위 : 'a' ~ 'z')
 		str[i] = (rand() % 25) + 'a';
-	str[n] = '\0';					//str의 마지막은 NULL로 채움
+	str[n] = '\0';
+	//Fill the str randomly (range : 'a' ~ 'z')
+	//Fill with NULL the end of str
 
-	printf("\noriginal string : %s\n\n", str);//str 내용 출력
-	char *str_temp = (char*)malloc((sizeof(char) * n) + 1);		//str과 길이가 같은 str_temp 생성
-
+	printf("\noriginal string : %s\n\n", str);
+	//Output str contents
+	char *str_temp = (char*)malloc((sizeof(char) * n) + 1);	
+	//Create str_temp length equal to str
 	
-	//Trivial로 실행
+	//Trivial
 	strcpy(str_temp, str);
 	start = clock();
 	trivial(str_temp, n, d);
@@ -38,14 +43,33 @@ int main()
 	printf("\tResult : %s\n", str_temp);
 	printf("\tElapsed Time : %d\n", elapsed_time);
 
+	//Juggling
+	strcpy(str_temp, str);
+	start = clock();
+	juggle(str_temp, n, d);
+	end = clock();
+	elapsed_time = end - start;
+	printf("Juggling\n");
+	printf("\tResult : %s\n", str_temp);
+	printf("\tElapsed Time : %d\n", elapsed_time);
 
-	//BlockSwap로 실행
+	//BlockSwap
 	strcpy(str_temp, str);
 	start = clock();
 	BlockSwap(str_temp, n, d);
 	end = clock();
 	elapsed_time = end - start;
 	printf("BlockSwap\n");
+	printf("\tResult : %s\n", str_temp);
+	printf("\tElapsed Time : %d\n", elapsed_time);
+
+	//Reverse
+	strcpy(str_temp, str);
+	start = clock();
+	reverse(str_temp, n, d);
+	end = clock();
+	elapsed_time = end - start;
+	printf("Reverse\n");
 	printf("\tResult : %s\n", str_temp);
 	printf("\tElapsed Time : %d\n", elapsed_time);
 
