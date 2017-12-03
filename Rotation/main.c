@@ -20,9 +20,10 @@ int main()
 	scanf("%d", &d);
 	//Input the number of string to ratate (If negative input, rotate to the opposite direction)
 
-	char *str = (char*)malloc((sizeof(char) * n) + 1);		//str 생성
+	char *str = (char*)malloc((sizeof(char) * n) + 1);
+	//Create str
 
-	for (int i = 0; i < n; i++)		//str을 랜덤하게 채움 (범위 : 'a' ~ 'z')
+	for (int i = 0; i < n; i++)	
 		str[i] = (rand() % 25) + 'a';
 	str[n] = '\0';
 	//Fill the str randomly (range : 'a' ~ 'z')
