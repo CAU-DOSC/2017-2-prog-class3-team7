@@ -30,7 +30,7 @@ int main()
 	//Trivial·Î ½ÇÇà
 	strcpy(str_temp, str);
 	start = clock();
-	trivial(str_temp, d, n);
+	trivial(str_temp, n, d);
 	end = clock();
 	elapsed_time = end - start;
 	printf("Trivial\n");

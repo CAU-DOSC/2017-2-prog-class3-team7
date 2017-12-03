@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void trivial(char *str1, int d, int length)
+void trivial(char *str1, int length, int d)
 {
 	char temp;
 	if (d > 0)
