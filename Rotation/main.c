@@ -9,7 +9,7 @@ int main()
 {
 	int n, d;
 
-	double elapsed_time;
+	double tri_elapsed_time, bw_elapsed_time, jug_elapsed_time, rev_elapsed_time;
 	clock_t start, end;
 
 	printf("input the length of string> ");		//string의 길이 n 입력
@@ -25,6 +25,7 @@ int main()
 	str[n] = '\0';					//str의 마지막은 NULL로 채움
 
 	printf("\noriginal string : %s\n\n", str);//str 내용 출력
+
 	char *str_temp = (char*)malloc((sizeof(char) * n) + 1);		//str과 길이가 같은 str_temp 생성
 
 	
@@ -33,7 +34,7 @@ int main()
 	start = clock();
 	trivial(str_temp, n, d);
 	end = clock();
-	elapsed_time = end - start;
+	tri_elapsed_time = end - start;
 	printf("Trivial\n");
 	printf("\tResult : %s\n", str_temp);
 	printf("\tElapsed Time : %d\n", elapsed_time);
@@ -44,10 +45,15 @@ int main()
 	start = clock();
 	BlockSwap(str_temp, n, d);
 	end = clock();
-	elapsed_time = end - start;
+	bw_elapsed_time = end - start;
 	printf("BlockSwap\n");
 	printf("\tResult : %s\n", str_temp);
 	printf("\tElapsed Time : %d\n", elapsed_time);
 
+	
+	
+	// Result Output
+	printf("\nSTRLength\tROTATEdistance\tT.trivial\tT.juggle\tT.bw\tT.reverse");
+	printf("\n%d\t\t%d\t\t\t%f\t%f\t%f\t%f\n",n,d,tri_elapsed_time,jug_elapsed_time,bw_elapsed_time,rev_elapsed_time);
 	return 0;
 }
