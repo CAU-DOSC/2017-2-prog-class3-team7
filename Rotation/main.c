@@ -9,7 +9,7 @@ int main()
 {
 	int n, d;
 
-	double elapsed_time;
+	double tri_elapsed_time, bw_elapsed_time, jug_elapsed_time, rev_elapsed_time;
 	clock_t start, end;
 
 	printf("input the length of string> ");
@@ -25,7 +25,8 @@ int main()
 
 	for (int i = 0; i < n; i++)	
 		str[i] = (rand() % 25) + 'a';
-	str[n] = '\0';
+
+  str[n] = '\0';
 	//Fill the str randomly (range : 'a' ~ 'z')
 	//Fill with NULL the end of str
 
@@ -39,7 +40,7 @@ int main()
 	start = clock();
 	trivial(str_temp, n, d);
 	end = clock();
-	elapsed_time = end - start;
+	tri_elapsed_time = end - start;
 	printf("Trivial\n");
 	printf("\tResult : %s\n", str_temp);
 	printf("\tElapsed Time : %d\n", elapsed_time);
@@ -59,20 +60,24 @@ int main()
 	start = clock();
 	BlockSwap(str_temp, n, d);
 	end = clock();
-	elapsed_time = end - start;
+	bw_elapsed_time = end - start;
 	printf("BlockSwap\n");
 	printf("\tResult : %s\n", str_temp);
 	printf("\tElapsed Time : %d\n", elapsed_time);
 
-	//Reverse
+//Reverse
 	strcpy(str_temp, str);
 	start = clock();
 	reverse(str_temp, n, d);
 	end = clock();
-	elapsed_time = end - start;
+	rev_elapsed_time = end - start;
 	printf("Reverse\n");
 	printf("\tResult : %s\n", str_temp);
-	printf("\tElapsed Time : %d\n", elapsed_time);
+	printf("\tElapsed Time : %d\n", elapsed_time);	
+	
+	// Result Output
+	printf("\nSTRLength\tROTATEdistance\tT.trivial\tT.juggle\tT.bw\tT.reverse");
+	printf("\n%d\t\t%d\t\t\t%f\t%f\t%f\t%f\n",n,d,tri_elapsed_time,jug_elapsed_time,bw_elapsed_time,rev_elapsed_time);
 
 	return 0;
 }
