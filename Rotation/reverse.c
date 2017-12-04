@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void reverse(char *str1, int d, int length)
+void reverse(char *str1, int length, int d)
 {
 	char *rev_str_A = (char*)malloc(d + 1);
 	char *rev_str_B = (char*)malloc(length-d+1);

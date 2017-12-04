@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void juggle(char *str1, int d, int length)
+void juggle(char *str1, int length, int d)
 {
 	char* juggle = (char *)malloc(length + 1);
 
