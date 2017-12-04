@@ -9,7 +9,7 @@ int main()
 {
 	int n, d;
 
-	double elapsed_time;
+	double tri_elapsed_time, jug_elapsed_time, bw_elapsed_time, rev_elapsed_time;
 	clock_t start, end;
 
 	printf("input the length of string> ");
@@ -39,40 +39,43 @@ int main()
 	start = clock();
 	trivial(str_temp, n, d);
 	end = clock();
-	elapsed_time = end - start;
+	tri_elapsed_time = end - start;
 	printf("Trivial\n");
 	printf("\tResult : %s\n", str_temp);
-	printf("\tElapsed Time : %d\n", elapsed_time);
+	printf("\tElapsed Time : %d\n", tri_elapsed_time);
 
 	//Juggling
 	strcpy(str_temp, str);
 	start = clock();
 	juggle(str_temp, n, d);
 	end = clock();
-	elapsed_time = end - start;
+	jug_elapsed_time = end - start;
 	printf("Juggling\n");
 	printf("\tResult : %s\n", str_temp);
-	printf("\tElapsed Time : %d\n", elapsed_time);
+	printf("\tElapsed Time : %d\n", jug_elapsed_time);
 
 	//BlockSwap
 	strcpy(str_temp, str);
 	start = clock();
 	BlockSwap(str_temp, n, d);
 	end = clock();
-	elapsed_time = end - start;
+	bw_elapsed_time = end - start;
 	printf("BlockSwap\n");
 	printf("\tResult : %s\n", str_temp);
-	printf("\tElapsed Time : %d\n", elapsed_time);
+	printf("\tElapsed Time : %d\n", bw_elapsed_time);
 
 	//Reverse
 	strcpy(str_temp, str);
 	start = clock();
 	reverse(str_temp, n, d);
 	end = clock();
-	elapsed_time = end - start;
+	rev_elapsed_time = end - start;
 	printf("Reverse\n");
 	printf("\tResult : %s\n", str_temp);
-	printf("\tElapsed Time : %d\n", elapsed_time);
+	printf("\tElapsed Time : %d\n", rev_elapsed_time);
+
+	printf("\nSTRLength	ROTATEdistance	T.trivial	T.juggle	T.bw		T.reverse\n");
+	printf("%d\t\t%d\t\t%0f\t%0f\t%0f\t%0f", n, d, tri_elapsed_time, jug_elapsed_time, bw_elapsed_time, rev_elapsed_time);
 
 	return 0;
 }
