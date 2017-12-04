@@ -6,6 +6,6 @@
 #include <string.h>
 
 void trivial(char *str1, int length, int d);
-void reverse(char *str1, int d, int length);
-void juggle (char *str, int d, int length);
+void reverse(char *str1, int length, int d);
+void juggle (char *str, int length, int d);
 void BlockSwap(char *str, int n, int d);
