@@ -43,13 +43,24 @@ Program summary
 
 Library function List
 
-T.trivial
-T.juggle
-T.bw
-T.reverse
+void trivial (char *str1, int length, int d)
+	// length 만큼의 문자열 str1을 받아 |d|만큼의 문자열을 temp에 저장하여 정해진 방향으로 rotate  
 
+void juggle (char *str, in length, int d)
+	// length 만큼의 문자열 str을 받아 |d|만큼의 문자를 rotate
+
+void BlockSwap (char *str, int n, int d)
+	// length 만큼의 문자열 str을 받아 |d|만큼의 문자를 rotate
+
+
+void reverse (char *str, int n, int d)
+	//
+
+int gcd(int num1, int num2)
+	// 
 
 
 Test Results
-
+STRLength	ROTATE distance		T.trivial	T.juggle	T.bw		T.reverse
+   100000		  10000		3978.000000	1.000000	1.000000	1.000000	
 
