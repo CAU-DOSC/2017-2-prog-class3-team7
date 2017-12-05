@@ -43,33 +43,9 @@ void juggle(char *str1, int length, int d)
 			str1[j] = temp;
 		}
 	}
-	/*
+
 	else
-	{
-		d = -d;
-		i = 0;
-		while (i < gcd_num)
-		{
-			g = length - 1;
-			temp = str1[g];
-			j = g;
-			while (1)
-			{
-				k = j - d;
-				if (k < 0)
-					k = k + length;
-				if (k == i)
-					break;
-				str1[j] = str1[k];
-				j = k;
-			}
-			str1[j] = temp;
-			i++;
-		}
-	}
-	*/
-	else
-	{
+	{`
 		d = -d;
 		for (i = 0; i <gcd_num; i++)
 		{
