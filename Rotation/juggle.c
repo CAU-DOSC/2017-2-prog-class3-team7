@@ -3,10 +3,11 @@
 
 int gcd(int num1, int num2)
 {
-	int num_gcd;
-	for (int i = 1; i < (num1 > num2 ? num1 : num2); i++)
+	int num_gcd = 1;
+	int temp = (num1 > num2 ? num1 : num2);
+	for (int i = 1; i < temp; i++)
 	{
-		if ((num1%i == 0) && (num2&i == 0))
+		if ((num1%i == 0) && (num2%i == 0))
 			num_gcd = i;
 	}
 	return num_gcd;
@@ -14,10 +15,16 @@ int gcd(int num1, int num2)
 
 void juggle(char *str1, int length, int d)
 {
-	int i, j, k, temp, g;
+	int i, j, k, temp, g, s;
+	int gcd_num = 0;
+	if (d > 0)
+		gcd_num = gcd(d, length);
+	else
+		gcd_num = gcd(-d, length);
+
 	if (d > 0)
 	{
-		for (i = 0; i < gcd(d, length); i++)
+		for (i = 0; i < gcd_num; i++)
 		{
 			temp = str1[i];
 			j = i;
@@ -36,11 +43,12 @@ void juggle(char *str1, int length, int d)
 			str1[j] = temp;
 		}
 	}
+	/*
 	else
 	{
 		d = -d;
 		i = 0;
-		while (i < gcd(d, length))
+		while (i < gcd_num)
 		{
 			g = length - 1;
 			temp = str1[g];
@@ -57,6 +65,35 @@ void juggle(char *str1, int length, int d)
 			}
 			str1[j] = temp;
 			i++;
+		}
+	}
+	*/
+	else
+	{
+		d = -d;
+		for (i = 0; i <gcd_num; i++)
+		{
+			k = i;
+
+			while (k < length)
+			{
+				k += d;
+			}
+			k -= d;
+			j = k;
+			s = k;
+			temp = str1[j];
+			while (1)
+			{
+				k -= d;
+				if (k < 0)
+					k += length;
+				if (k == j)
+					break;
+				str1[s] = str1[k];
+				s = k;
+			}
+			str1[s] = temp;
 		}
 	}
 	return;
